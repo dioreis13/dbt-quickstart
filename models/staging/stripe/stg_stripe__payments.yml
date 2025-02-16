@@ -1,0 +1,30 @@
+version: 2
+models: 
+  - name: stg_stripe__payments
+    description: one row per payment attempt
+    columns: 
+      - name: payment_id
+        description: primary key
+        data_tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: foreign key to stg_orders 
+        data_tests:
+          - relationships:
+              to: ref('stg_jaffle_shop__orders')
+              field: order_id
+      - name: payment_method
+        description: type of payment method used
+        data_tests:
+          - accepted_values:
+              values:
+                ['coupon','credit_card','bank_transfer','gift_card']
+      - name: status
+        description: describe if payment was done or not
+        data_tests:
+          - accepted_values:
+              values:
+                ['success','fail']
+      - name: amount
+        description: payment amount in cents

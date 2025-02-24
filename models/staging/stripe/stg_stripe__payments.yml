@@ -20,11 +20,11 @@ models:
           - accepted_values:
               values:
                 ['coupon','credit_card','bank_transfer','gift_card']
-      - name: status
+      - name: payment_status
         description: describe if payment was done or not
         data_tests:
           - accepted_values:
               values:
                 ['success','fail']
-      - name: amount
+      - name: payment_amount
         description: payment amount in cents

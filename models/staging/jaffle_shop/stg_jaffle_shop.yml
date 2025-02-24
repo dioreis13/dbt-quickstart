@@ -8,10 +8,12 @@ models:
         data_tests:
           - unique
           - not_null
-      - name: first_name
+      - name: givenname
         description: customer's first name
-      - name: last_name
+      - name: surname
         description: customer's last name
+      - name: fullname
+        description: customer's complete name
   - name: stg_jaffle_shop__orders
     description: one row per order
     columns:
@@ -20,7 +22,7 @@ models:
         data_tests:
           - unique
           - not_null
-      - name: status
+      - name: order_status
         description: "{{ doc('order_status') }}"
         data_tests:
           - accepted_values:

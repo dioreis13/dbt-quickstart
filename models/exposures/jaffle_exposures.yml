@@ -1,4 +1,5 @@
 exposures:
+
   - name: Orders_data
     label: Orders_data
     type: notebook
@@ -25,3 +26,4 @@ exposures:
     owner: 
       name: Data Startrek
       email: operations_manager@enterprise.com
+

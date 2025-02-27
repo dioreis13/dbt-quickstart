@@ -21,7 +21,7 @@ transformed as (
         , _etl_loaded_at as order_placed_at
 
     from source
-    {{ limit_data_in_dev('order_date',2600) }}
+    {{ limit_data_in_dev('order_date',3000) }}
 )
 
 select * from transformed
